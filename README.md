@@ -11,14 +11,13 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 
 
 
 # 📖 [Realtime Search Box] <a name="about-project"></a>
 
-**[Realtime Search Box]** is a search engine where users search articles.
+**Realtime Search Box** is a search engine where users search articles.
 It also has a dashboard to display what users were searching for by rank. 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -29,20 +28,16 @@ It also has a dashboard to display what users were searching for by rank.
   <summary>Client</summary>
   <ul>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/">JavaScript.js</a></li>
-  </ul>
-  <summary>Server</summary>
-  <ul>
     <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
-  
 </details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **[User queries data]**
-- **[Queries displayed by rank]**
+- **User queries data**
+- **Queries displayed by rank**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,7 +55,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+To run this project you need:
 ```sh
   rails
 ```
