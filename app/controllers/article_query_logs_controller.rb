@@ -18,7 +18,7 @@ class ArticleQueryLogsController < ApplicationController
 
   def index
     @search_trends = ArticleQueryLog.all
-    render json: @search_trends
+    # render json: @search_trends
   end
 
   private
