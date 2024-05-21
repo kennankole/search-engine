@@ -1,0 +1,26 @@
+  <h1>Keyword Rankings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Count</th>
+      <th>Queries</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ranked_keywords.each do |keyword, data| %>
+      <tr>
+        <td><%= keyword %></td>
+        <td><%= data[:count] %></td>
+        <td>
+          <ul>
+            <% data[:queries].each do |query| %>
+              <li><%= query %></li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

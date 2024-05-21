@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Analytics</title>
+  <%= javascript_include_tag 'application', type: 'importmap' %>
+  <%= javascript_include_tag 'controllers/searchEngine', type: 'module' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div>
+    <h1>Search</h1>
+    <input type="text" id="search-input" placeholder="Type to search...">
+    <div id="search-results"></div>
+  </div>
+
+  <div>
+    <h1>Search Trends</h1>
+    <ul id="search-trends">
+      <% @search_trends.each do |query, count| %>
+        <li><%= query.query %></li>
+      <% end %>
+    </ul>
+  </div>
+
+</body>
+</html>
