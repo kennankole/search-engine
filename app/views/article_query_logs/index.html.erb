@@ -4,20 +4,17 @@
   <title>Search Analytics</title>
   <%= javascript_include_tag 'application', type: 'importmap' %>
   <%= javascript_include_tag 'controllers/searchEngine', type: 'module' %>
+  <%= stylesheet_link_tag 'home/index' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div>
-    <h1>Search</h1>
-    <input type="text" id="search-input" placeholder="Type to search...">
-    <div id="search-results"></div>
-  </div>
-
-  <div>
-    <h1>Search Trends</h1>
-    <ul id="search-trends">
-    </ul>
-  </div>
-
+  <%= render 'shared/navbar' %>
+  <main class="main-window">
+    <h1 class="header">Realtime Search Box</h1>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Type to search...">
+      <div id="search-results"></div>
+    </div>
+  </main>
 </body>
 </html>
