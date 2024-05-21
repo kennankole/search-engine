@@ -16,6 +16,7 @@ export const logArticleQuery = async (query, csrfToken) => {
 };
 
 export const setUpEventListeners = (searchInput, searchResults, csrfToken) => {
+  
   searchInput.addEventListener('keypress', async (event) => {
     if (event.key === 'Enter') {
       const query = event.target.value.trim();

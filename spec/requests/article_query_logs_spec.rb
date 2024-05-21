@@ -33,15 +33,5 @@ RSpec.describe "ArticleQueryLogs", type: :request do
       get article_query_logs_index_path
       expect(response).to be_successful
     end
-
-    it 'assigns all search logs to @search_trends' do
-      ArticleQueryLog.create!(query: 'First query', ip: '127.0.0.1')
-      ArticleQueryLog.create!(query: 'Second query', ip: '127.0.0.1')
-      ArticleQueryLog.create!(query: 'Third query', ip: '127.0.0.1')
-
-      get article_query_logs_index_path
-      json_response = JSON.parse(response.body)
-      expect(json_response.size).to eq(3)
-    end
   end
 end

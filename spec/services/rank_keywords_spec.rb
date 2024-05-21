@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe RankKeywords do
-  let(:queries) { [
-    "The quick brown fox jumps over the lazy dog",
-    "Quick brown fox",
-    "Lazy dog and quick fox",
-    "The quick brown fox"
-  ] }
+  let(:queries) {
+    [
+      "The quick brown fox jumps over the lazy dog",
+      "Quick brown fox",
+      "Lazy dog and quick fox",
+      "The quick brown fox"
+    ]
+  }
 
   subject { described_class.new(queries) }
 
@@ -24,24 +26,24 @@ RSpec.describe RankKeywords do
     it 'associates the correct queries with each keyword' do
       expect(subject.keyword_data['quick'][:queries]).to match_array(queries)
       expect(subject.keyword_data['brown'][:queries]).to match_array([
-        'The quick brown fox jumps over the lazy dog',
-        'Quick brown fox',
-        'The quick brown fox'
-      ])
+                                                                       'The quick brown fox jumps over the lazy dog',
+                                                                       'Quick brown fox',
+                                                                       'The quick brown fox'
+                                                                     ])
       expect(subject.keyword_data['fox'][:queries]).to match_array([
-        "The quick brown fox jumps over the lazy dog",
-        "Quick brown fox",
-        "Lazy dog and quick fox",
-        "The quick brown fox"
-      ])
+                                                                     "The quick brown fox jumps over the lazy dog",
+                                                                     "Quick brown fox",
+                                                                     "Lazy dog and quick fox",
+                                                                     "The quick brown fox"
+                                                                   ])
       expect(subject.keyword_data['lazy'][:queries]).to match_array([
-        "The quick brown fox jumps over the lazy dog",
-        "Lazy dog and quick fox"
-      ])
+                                                                      "The quick brown fox jumps over the lazy dog",
+                                                                      "Lazy dog and quick fox"
+                                                                    ])
       expect(subject.keyword_data['dog'][:queries]).to match_array([
-        "The quick brown fox jumps over the lazy dog",
-        "Lazy dog and quick fox"
-      ])
+                                                                     "The quick brown fox jumps over the lazy dog",
+                                                                     "Lazy dog and quick fox"
+                                                                   ])
     end
 
     it 'sorts the keywords by their count in descending order' do
