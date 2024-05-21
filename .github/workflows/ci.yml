@@ -47,8 +47,8 @@ jobs:
     name: RSpec Tests
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-ruby@v1
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2.1"
       - name: Install dependencies
