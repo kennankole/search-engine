@@ -5,15 +5,13 @@
     <title>Search Analytics</title>
     <%= javascript_include_tag 'application', type: 'importmap' %>
     <%= javascript_include_tag 'controllers/searchEngine', type: 'module' %>
+    <%= stylesheet_link_tag 'home/index' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <main>
-    <h1>Keyword Rankings</h1>
-    <div>
-        <h1>Search Trends</h1>
-        <ul id="search-trends"></ul>
-      </div>
+    <main class="dashboard">
+    <h1 class="dashboard-header">Keyword Rankings</h1>
+    <div class="table-content">
     <table>
       <thead>
         <tr>
@@ -38,6 +36,7 @@
         <% end %>
       </tbody>
     </table>
+    </div>
   </main>
   </body>
 </html>

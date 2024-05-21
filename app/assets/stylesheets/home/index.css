@@ -32,4 +32,65 @@
 
 .header {
   color: rgb(43, 40, 40);
+  font-size: 2rem;
+}
+
+/*-----------------Dashboard----------------*/
+.dashboard-header {
+  top: 5%;
+}
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.table-content {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+table td ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+table td ul li {
+  padding: 5px 0;
 }
