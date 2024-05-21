@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Analytics</title>
+    <%= javascript_include_tag 'application', type: 'importmap' %>
+    <%= javascript_include_tag 'controllers/searchEngine', type: 'module' %>
+    <%= stylesheet_link_tag 'home/index' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'shared/navbar' %>
+    <main class="dashboard">
+    <h1 class="dashboard-header">Keyword Rankings</h1>
+    <div class="table-content">
+    <table>
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Count</th>
+          <th>Queries</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @ranked_keywords.each do |keyword, data| %>
+          <tr>
+            <td><%= keyword %></td>
+            <td><%= data[:count] %></td>
+            <td>
+              <ul>
+                <% data[:queries].each do |query| %>
+                  <li><%= query %></li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </main>
+  </body>
+</html>

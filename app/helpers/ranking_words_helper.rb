@@ -1,0 +1,2 @@
+module RankingWordsHelper
+end

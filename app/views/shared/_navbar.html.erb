@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag 'home/index' %>
+<nav class="nav-bar">
+  <div class="left">
+    <ul class="left-elem">
+      <%= link_to 'Logo', dashboard_path, class: "nav-elem"%>
+    </ul>
+  </div>
+  <div class="right">
+    <ul class="right-elem">
+      <%= link_to 'Search', article_query_logs_index_path, class: "nav-elem" %>
+      <%= link_to 'Trending Searches', dashboard_path, class: "nav-elem" %>
+    <ul>
+  </div>
+</nav>
