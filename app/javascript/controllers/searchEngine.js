@@ -1,5 +1,5 @@
 export const logArticleQuery = async (query, csrfToken) => {
-  const response = await fetch('/article_query_logs', {
+  const response = await fetch('/query', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -16,11 +16,12 @@ export const logArticleQuery = async (query, csrfToken) => {
 };
 
 export const setUpEventListeners = (searchInput, searchResults, csrfToken) => {
-  searchInput.addEventListener('keypress', (event) => {
+  searchInput.addEventListener('keypress', async (event) => {
     if (event.key === 'Enter') {
       const query = event.target.value.trim();
       if (query) {
-        logArticleQuery(query);
+        await logArticleQuery(query);
+        searchInput.value = '';
       }
     }
   });
