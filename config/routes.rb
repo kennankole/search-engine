@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   resources :article_query_logs, only: [:create, :index]
   get 'dashboard', to: 'ranking_words#index'
+  get '/', to: 'article_query_logs#index'
+  post 'query', to: 'article_query_logs#create'
 end
