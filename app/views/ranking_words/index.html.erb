@@ -22,9 +22,9 @@
         </tr>
       </thead>
       <tbody>
-        <% @ranked_keywords.each do |keyword, data| %>
+        <% @ranked_keywords.each do |data| %>
           <tr>
-            <td><%= keyword %></td>
+            <td><%= data[:keyword] %></td>
             <td><%= data[:count] %></td>
             <td>
               <ul>
