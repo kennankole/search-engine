@@ -10,16 +10,16 @@ class RankKeywords
     only or other ought our ours ourselves out over own same shan't she she'd she'll she's should
     shouldn't so some such than that that's the their theirs them themselves then there there's
     these they they'd they'll they're they've this those through to too under until up very was
-    wasn't we we'd we'll we're we've were weren't what what's when when's where where's which while
+    wasn't want we we'd we'll we're we've were weren't what what's when when's where where's which while
     who who's whom why why's with won't would wouldn't you you'd you'll you're you've your yours
-    yourself yourselves
+    yourself yourselves true false hello
   ].freeze
 
   def initialize(queries)
     @queries = queries
     @keyword_counts = Hash.new(0)
-    @keyword_queries = Hash.new {
-      |hash, key| hash[key] = []
+    @keyword_queries = Hash.new { |hash, key|
+      hash[key] = []
     }
   end
 
@@ -31,13 +31,14 @@ class RankKeywords
         @keyword_queries[keyword] << query
       end
     end
-    @keyword_data = @keyword_counts.sort_by {
-      |_, count| -count
-    }.map do |keyword, count|{
-      keyword: keyword, 
-      count: count,
-      queries: @keyword_queries[keyword]
-    }
+    @keyword_data = @keyword_counts.sort_by { |_, count|
+      -count
+    }.map do |keyword, count|
+      {
+        keyword: keyword,
+        count: count,
+        queries: @keyword_queries[keyword]
+      }
     end
   end
 
@@ -45,13 +46,7 @@ class RankKeywords
 
   def extract_keywords(query)
     keywords = query.downcase.scan(/\b[a-z]+\b/)
-
-    filtered_keywords = keywords.reject {
-      |word| STOP_WORDS.include?(word)
-    }
-    stemmed_keywords = filtered_keywords.map {
-      |word| word
-    }
-    stemmed_keywords
+    filtered_keywords = keywords.reject { |word| STOP_WORDS.include?(word) }
+    filtered_keywords
   end
 end
